@@ -1,0 +1,16 @@
+#form.container
+  = form_tag(posts_path) do
+    .col-md-8
+      = text_area_tag "text", "", class: "form-control"
+    .col-md-4
+      = submit_tag "ぬまおo", class: "btn btn-primary btn-large"
+
+= paginate @posts
+
+#posts
+  - @posts.each do |post|
+    .post
+      .name = post.user.name
+      .text = post.text
+
+= paginate @posts

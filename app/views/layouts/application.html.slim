@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title IDCF SNS ぬまの
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  
+  body
+    header.container
+      h1 IDCF SNS ぬまの
+
+    #flash.container
+      - flash.each do |key, value|
+        div class="alert alert=#{key}" = value
+
+    #container.container
+      = yield
+
+    footer.container
+      - if user_signed_in?
+        = link_to "Sign out", destroy_user_session_path, method: :delete
+
