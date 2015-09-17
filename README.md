@@ -24,5 +24,5 @@ GOOGLE_CLIENT_SECRET=yourclientsecret
 ### 起動する
 
 ```bash
-rails server
+bundle exec rails server
 ```
